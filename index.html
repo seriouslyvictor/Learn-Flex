@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav class="sidebar">
+        <h2 class="nav--title">Exercícios Flexbox</h2>
+        <a href="#intro">Introdução</a>
+
+    </nav>
+
+    <main class="content">
+        <h1 id="intro">Então você quer aprender Flexbox? 🚀</h1>
+        <p>👋 Bem-vindo, querido estudante!</p>
+        <p>🌟 Nesta página, você encontrará exercícios com níveis progressivos de dificuldade para ajudá-lo a entender
+            melhor como aplicar Flexbox na construção de layouts em CSS.</p>
+        <p>💡 Siga os exercícios na ordem recomendada e <strong>tente resolvê-los</strong> por conta própria. Use o MDN,
+            Google ou ChatGPT para traduzir termos ou esclarecer conceitos que você ainda tenha dúvidas.</p>
+        <p>💪 Desenvolver autonomia e encarar desafios faz parte da rotina de um desenvolvedor. Não tenha medo de
+            quebrar a cabeça 🧠 ou assumir desafios que você ainda não sabe exatamente como resolver. Isso faz parte do
+            aprendizado e da evolução! 🎯🏆</p>
+
+        <!-- Exercise 1 -->
+        <article id="ex1" class="exercise">
+            <h2 class="ex--title">Exercício 1: Justify Content</h2>
+            <p><strong>Objetivo:</strong> Aprender a usar <code>justify-content</code> para alinhar itens
+                horizontalmente dentro de um container Flexbox.</p>
+
+            <p><strong>Passos:</strong></p>
+            <ol>
+                <li>Crie um arquivo chamado <code>exercicios_flex.html</code> e adicione a estrutura básica de HTML.
+                </li>
+                <li>Dentro do <code>&lt;body&gt;</code>, crie um <code>div</code> com a classe <code>container</code>.
+                    Este será seu Flex container.</li>
+                <li>Dentro do <code>container</code>, crie três <code>divs</code> com a classe <code>box</code>.</li>
+                <li>No CSS, aplique <code>display: flex;</code> ao <code>.container</code>.</li>
+                <li>Experimente diferentes valores para <code>justify-content</code> (como <code>center</code>,
+                    <code>space-between</code>, e <code>flex-end</code>) para ver como os itens são alinhados.
+                </li>
+            </ol>
+
+            <p><strong>Exemplo de código:</strong></p>
+            <pre>
+&lt;div class="container"&gt;
+  &lt;div class="box"&gt;&lt;/div&gt;
+  &lt;div class="box red"&gt;&lt;/div&gt;
+  &lt;div class="box blue"&gt;&lt;/div&gt;
+&lt;/div&gt;
+      </pre>
+            <div class="output" style="justify-content: center;">
+                <div class="box"></div>
+                <div class="box red"></div>
+                <div class="box blue"></div>
+            </div>
+        </article>
+
+        <!-- Exercise 2 -->
+        <article id="ex2" class="exercise">
+            <h2 class="ex--title">Exercício 2: Align Items</h2>
+            <p><strong>Objetivo:</strong> Aprender a usar <code>align-items</code> para alinhar os itens verticalmente
+                dentro de um container Flexbox.</p>
+
+            <p><strong>Passos:</strong></p>
+            <ol>
+                <li>Crie um outro container chamado <code>container-2</code>.</li>
+                <li>Repita os passos do Exercício 1, mas desta vez use a propriedade <code>align-items</code> para
+                    alinhar os itens verticalmente.</li>
+                <li>Aplique <code>height</code> à <code>container2</code> para que o efeito seja visível (ex:
+                    <code>height: 200px;</code>).
+                </li>
+                <li>Experimente valores como <code>flex-start</code>, <code>center</code>, e <code>flex-end</code> para
+                    ver as mudanças no alinhamento.</li>
+            </ol>
+
+            <p><strong>Exemplo de código:</strong></p>
+            <pre>
+&lt;div class="container-2"&gt;
+  &lt;div class="box"&gt;&lt;/div&gt;
+  &lt;div class="box red"&gt;&lt;/div&gt;
+  &lt;div class="box blue"&gt;&lt;/div&gt;
+&lt;/div&gt;
+      </pre>
+            <div class="output" style="align-items: center; height: 200px;">
+                <div class="box"></div>
+                <div class="box red"></div>
+                <div class="box blue"></div>
+            </div>
+        </article>
+        <!-- Ecercicio 3 -->
+        <article id="ex3" class="exercise">
+            <h2 class="ex--title">Exercício 3: Justify-content</h2>
+            <p><strong>Objetivo:</strong> Aprender a usar <code>justify-content</code> para separar os itens
+                horizontalmente
+                dentro de um container Flexbox.</p>
+
+            <p><strong>Passos:</strong></p>
+            <ol>
+                <li>Crie um container chamado <code>container-3</code>.</li>
+                <li>Repita os passos do Exercício 1, usa novamente a propriedade <code>justify-content</code> para
+                    espaçar os itens horizontalmente.</li>
+                <li>Experimente valores como <code>space-between</code>, <code>space-around</code>, e
+                    <code>space-evenly</code> para
+                    ver as mudanças no espaçamento.
+                </li>
+            </ol>
+
+            <p><strong>Exemplo de código:</strong></p>
+            <pre>
+&lt;div class="container-3"&gt;
+  &lt;div class="box"&gt;&lt;/div&gt;
+  &lt;div class="box red"&gt;&lt;/div&gt;
+  &lt;div class="box blue"&gt;&lt;/div&gt;
+&lt;/div&gt;
+      </pre>
+            <div class="output" style="justify-content: space-between; height: auto;">
+                <div class="box"></div>
+                <div class="box red"></div>
+                <div class="box blue"></div>
+            </div>
+        </article>
+        <article id="ex4" class="exercise">
+            <h2 class="ex--title">Exercício 4: Flex com subgrupos</h2>
+            <p><strong>Objetivo:</strong> Aprender a usar <code>justify-content</code> para distribuir itens
+                horizontalmente, incluindo o agrupamento de caixas dentro de sub-containers no Flexbox.</p>
+
+            <p><strong>Passos:</strong></p>
+            <ol>
+                <li>Crie um container chamado <code>container-4</code> que será o flex container principal.</li>
+                <li>Dentro deste container, crie dois sub-containers chamados <code>grupo</code> usando
+                    <code>&lt;div&gt;</code>. Esses serão os grupos de caixas.
+                </li>
+                <li>Cada sub-container <code>grupo</code> deve conter 2 caixas, totalizando 4 caixas no final.</li>
+                <li>No CSS, aplique <code>display: flex;</code> ao <code>.container-4</code> e também aos sub-containers
+                    experimente valores para
+                    <code>justify-content</code>, como <code>space-between</code>, <code>space-around</code> e
+                    <code>space-evenly</code>, para observar como os grupos são separados e alinhados.
+                </li>
+            </ol>
+
+            <p><strong>Exemplo de código:</strong></p>
+            <pre>
+        &lt;div class="container-4"&gt;
+          &lt;div class="grupo"&gt;
+            &lt;div class="box"&gt;&lt;/div&gt;
+            &lt;div class="box red"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        
+          &lt;div class="grupo"&gt;
+            &lt;div class="box blue"&gt;&lt;/div&gt;
+            &lt;div class="box purple"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+            </pre>
+
+            <p><strong>Visualização:</strong> O layout final terá dois grupos de caixas separados horizontalmente de
+                acordo com o valor de <code>justify-content</code> aplicado.</p>
+
+            <div class="output" style="justify-content: space-between; height: auto;">
+                <div class="grupo" style="display: flex;">
+                    <div class="box"></div>
+                    <div class="box red"></div>
+                </div>
+
+                <div class="grupo" style="display: flex;">
+                    <div class="box blue"></div>
+                    <div class="box purple"></div>
+                </div>
+            </div>
+        </article>
+
+        <article id="ex5" class="exercise">
+            <h2 class="ex--title">Exercício 5: Flexbox com três subgrupos</h2>
+            <p><strong>Objetivo:</strong> Reforçar o uso do Flexbox criando um layout com dois grupos de caixas nas
+                extremidades e três caixas agrupadas no centro, utilizando propriedades de alinhamento.</p>
+
+            <p><strong>Passos:</strong></p>
+            <ol>
+                <li>Crie um container chamado <code>container-5</code> que será o flex container principal.</li>
+                <li>No <code>container-5</code>, adicione dois sub-containers, um para cada lado chamado
+                    <code>lado-esquerdo</code> e <code>lado-direito</code>, e um sub-container central chamado
+                    <code>centro</code>.
+                </li>
+                <li>Coloque uma caixa dentro de <code>lado-esquerdo</code> e <code>lado-direito</code> e três caixas
+                    dentro de <code>centro</code>.</li>
+                <li>No CSS, aplique <code>display: flex;</code> ao <code>container-5</code> e ajuste as propriedades de
+                    <code>justify-content</code> e <code>align-items</code> para alinhar os elementos corretamente.
+                </li>
+            </ol>
+
+            <p><strong>Exemplo de código:</strong></p>
+            <pre>
+        &lt;div class="container-5"&gt;
+          &lt;div class="lado-esquerdo"&gt;
+            &lt;div class="box red"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        
+          &lt;div class="centro"&gt;
+            &lt;div class="box blue"&gt;&lt;/div&gt;
+            &lt;div class="box purple"&gt;&lt;/div&gt;
+            &lt;div class="box green"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        
+          &lt;div class="lado-direito"&gt;
+            &lt;div class="box orange"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+            </pre>
+
+            <p><strong>Visualização:</strong> O layout resultante terá dois grupos de caixas (lado esquerdo e lado
+                direito) e um grupo central com três caixas, todos alinhados conforme as propriedades de Flexbox.</p>
+
+            <div class="output" style="justify-content: space-between; align-items: center;">
+                <div class="lado-esquerdo">
+                    <div class="box red"></div>
+                </div>
+
+                <div class="centro" style="display: flex;">
+                    <div class="box blue"></div>
+                    <div class="box purple"></div>
+                    <div class="box green"></div>
+                </div>
+
+                <div class="lado-direito">
+                    <div class="box orange"></div>
+                </div>
+            </div>
+        </article>
+
+        <article id="ex6" class="exercise">
+            <h2 class="ex--title">Exercício 6: Criando um Header com Flexbox</h2>
+            <p><strong>Objetivo:</strong> Criar um layout de cabeçalho típico de um site utilizando Flexbox, com uma
+                logo à esquerda, itens de navegação ao centro e botões à direita.</p>
+
+            <p><strong>Passos:</strong></p>
+            <ol>
+                <li>Crie um container chamado <code>header</code> que será o flex container principal.</li>
+                <li>Adicione um elemento para a logo (use um <code>&lt;div&gt;</code> ou <code>&lt;img&gt;</code>).</li>
+                <li>Crie um sub-container chamado <code>nav</code> dentro do header e adicione três links de navegação.
+                </li>
+                <li>Adicione um segundo sub-container para os botões à direita do cabeçalho.</li>
+                <li>No CSS, aplique <code>display: flex;</code> ao <code>header</code> e ajuste as propriedades de
+                    <code>justify-content</code> e <code>align-items</code> para criar um layout responsivo e bem
+                    alinhado.</li>
+            </ol>
+
+            <p><strong>Exemplo de código:</strong></p>
+            <pre>
+        &lt;header class="header"&gt;
+          &lt;div class="logo"&gt;Logo&lt;/div&gt;
+        
+          &lt;nav class="nav"&gt;
+            &lt;a href="#home"&gt;Home&lt;/a&gt;
+            &lt;a href="#about"&gt;Sobre&lt;/a&gt;
+            &lt;a href="#contact"&gt;Contato&lt;/a&gt;
+          &lt;/nav&gt;
+        
+          &lt;div class="buttons"&gt;
+            &lt;button&gt;Login&lt;/button&gt;
+            &lt;button&gt;Registrar&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/header&gt;
+            </pre>
+
+            <p><strong>Visualização:</strong> O layout final deve ter a logo à esquerda, os itens de navegação
+                centralizados e os botões alinhados à direita, todos organizados de forma clara e responsiva.</p>
+
+            <div class="output" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo">Logo</div>
+                <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+                <div class="buttons">
+                    <button>Login</button>
+                    <button>Registrar</button>
+                </div>
+            </div>
+        </article>
+
+
+
+
+    </main>
+</body>
+
+</html>

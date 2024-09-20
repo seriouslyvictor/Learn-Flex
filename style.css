@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&family=Hind:wght@300;400;500;600;700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+body {
+    background-color: #020617;
+    font-family: "Hind", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: #efeeee;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    min-width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    ;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #020617;
+    overflow-y: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20p
+}
+
+.content p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.exercise {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #353535;
+    background-color: #0f172a;
+    border-radius: .875rem;
+}
+
+.exercise .output {
+    margin-top: 10px;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #4ade80;
+}
+
+.box.red {
+    background-color: #f87171;
+}
+
+.box.blue {
+    background-color: #60a5fa;
+}
+
+.box.purple {
+    background-color: #c084fc;
+}
+
+.box.orange {
+    background-color: #fb923c;
+}
+
+
+ol {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+code,
+pre {
+    color: #5eead4;
+    font-family: 'Source Code Pro';
+}
+
+pre {
+    color: #67e8f9;
+    padding: 20px;
+    background-color: #030712;
+}
+
+strong {
+    background: #00F260;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+
+/* Animaçao de borda */
+.output {
+    border: 2px solid transparent;
+    /* Border size and initial transparency */
+    border-image: linear-gradient(to right, #12FFF7, #B3FFAB);
+    border-image-slice: 1;
+    background-size: 200% 200%;
+    /* Ensures the gradient moves */
+    background-clip: border-box;
+    /* Ensures gradient stays within border */
+    animation: borderAnimation 4s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
