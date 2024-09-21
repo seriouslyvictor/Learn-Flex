@@ -68,6 +68,7 @@ h1 {
     border: 1px solid #353535;
     background-color: #0f172a;
     border-radius: .875rem;
+    box-shadow: 1px 0px 9px 2px #ffffff1c;
 }
 
 .exercise .output {
@@ -99,6 +100,12 @@ h1 {
     background-color: #fb923c;
 }
 
+
+hr {
+    width: 100%;
+    opacity: 0.2;
+    margin: 0;
+}
 
 ol {
     display: flex;
