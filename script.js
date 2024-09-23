@@ -1,4 +1,19 @@
+const slider1 = document.querySelector("#slider1");
+const slider2 = document.querySelector("#slider2")
+const params = {
+    cellAlign: 'left',
+    contain: true,
+    prevNextButtons: false,
+    cellSelector: 'article',
+    wrapAround: true,
+    hash: true,
+}
+const sliders = [new Flickity(slider1, params), new Flickity(slider2, params)]
 const allExercises = document.querySelectorAll('.ex--title');
+
+
+sliders.forEach(slider => slider.element.addEventListener('click', (e) => avancarSlide(e)))
+
 const adicionarDivisor = function (el) {
     console.log(el)
     let section = el.closest("section");
@@ -13,7 +28,7 @@ const adicionarDivisor = function (el) {
 const gerarNavBar = function (array) {
     if (array.length <= 0) return;
     const nav = document.querySelector(".sidebar")
-    array.forEach(item => {
+    array.forEach((item, idx) => {
         console.log(item.closest("article"))
         const navLink = `#${item.closest("article").id}`;
         const navItemTitle = item.textContent;
@@ -25,41 +40,36 @@ const gerarNavBar = function (array) {
             const hr = document.createElement("hr")
             nav.append(hr)
         }
+        const slider = findFlickityParent(item.closest("article"))
+        navItem.addEventListener("click", (e) => irParaSlide(e, slider, idx))
     });
 }
 
-const iniciarSliders = function () {
-    const slider1 = document.querySelector("#slider1");
-    const slider2 = document.querySelector("#slider2")
-    const params = {
-        cellAlign: 'left',
-        contain: true,
-        prevNextButtons: false,
-        cellSelector: 'article',
-        wrapAround: true,
+const irParaSlide = function (e, carossel, slideNum) {
+    e.preventDefault();
+    carossel.select(slideNum);
+    carossel.element.scrollIntoView({
+        behavior: 'smooth', // Smooth scrolling effect
+        block: 'center'     // Scroll the element to the center of the viewport
+    });
+}
+
+const avancarSlide = function (e) {
+    const gerador = e.target.closest(".slider--button")
+    if (!gerador) return
+    const flicker = findFlickityParent(gerador)
+    gerador.classList.contains("next-button") ? flicker.next() : flicker.previous()
+
+}
+
+const findFlickityParent = function (el) {
+    for (let i = 0; i < sliders.length; i++) {
+        const slider = sliders[i];
+        if (slider.element.contains(el)) {
+            return slider;  // Return the Flickity instance
+        }
     }
-    const flicky1 = new Flickity(slider1, params)
-    const carosel2 = new Flickity(slider2, params)
-    const prevButton = slider1.querySelector('.prev-button');
-    const nextButton = slider1.querySelector('.next-button');
-    const prevButton2 = slider2.querySelector('.prev-button');
-    const nextButton2 = slider2.querySelector('.next-button');
-    prevButton.addEventListener('click', function () {
-        flicky1.previous();  // Go to the previous slide
-    });
-    nextButton.addEventListener('click', function () {
-        flicky1.next();  // Go to the next slide
-    });
-    prevButton2.addEventListener('click', function () {
-        carosel2.previous();  // Go to the previous slide
-    });
-    nextButton2.addEventListener('click', function () {
-        carosel2.next();  // Go to the next slide
-    });
-
-
+    return null;
 }
 
-
-iniciarSliders()
 gerarNavBar(allExercises)
