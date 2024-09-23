@@ -19,7 +19,7 @@
     </nav>
 
     <main class="content">
-        <section>
+        <section id="flex--intro">
             <h1 id="intro">Então você quer aprender Flexbox? 🚀</h1>
             <p>👋 Bem-vindo, querido estudante!</p>
             <p>🌟 Nesta página, você encontrará exercícios com níveis progressivos de dificuldade para ajudá-lo a
@@ -32,7 +32,7 @@
                 quebrar a cabeça 🧠 ou assumir desafios que você ainda não sabe exatamente como resolver. Isso faz parte
                 do
                 aprendizado e da evolução! 🎯🏆</p>
-            <div class="slider">
+            <div id="slider1" class="slider">
                 <article id="ex1" class="exercise">
                     <h2 class="ex--title">Exercício 1: Justify Content</h2>
                     <p><strong>Objetivo:</strong> Aprender a usar <code>justify-content</code> para alinhar itens
@@ -301,7 +301,7 @@
                 </button>
             </div>
         </section>
-        <section id="flex">
+        <section id="flex--colunas">
             <h2 class="topic--title"> Flex Direction</h2>
             <p>Agora nós vamos praticar layouts em <strong>colunas</strong> usando <code>flex-direction: column;</code>
             </p>
@@ -309,6 +309,130 @@
                 <code>justify-content</code> passa a afetar os itens <strong>verticalmente</strong> e o
                 <code>align-items</code> passa a afetar os itens <strong>horizontalmente</strong>.
             </p>
+            <div id="slider2" class="slider">
+                <article id="ex7" class="exercise">
+                    <h2 class="ex--title">Exercício 7: Alinhamento de caixas em coluna (Centro)</h2>
+                    <p><strong>Objetivo:</strong> Centralizar 3 caixas em um container usando
+                        <code>flex-direction: column</code>.
+                    </p>
+                    <p><strong>Passos:</strong></p>
+                    <ol>
+                        <li>Crie um container chamado <code>container-7</code> com 400px de altura e dentro dele, crie 3
+                            caixas usando
+                            <code>div</code>.
+                        </li>
+                        <li>Defina <code>display: flex</code> e <code>flex-direction: column</code> no container.</li>
+                        <li>Use <code>justify-content: center</code> para alinhar verticalmente e
+                            <code>align-items: center</code> para alinhar horizontalmente.
+                        </li>
+                    </ol>
+                    <p><strong>Exemplo de código:</strong></p>
+                    <pre>
+                &lt;div class="container-7"&gt;
+                  &lt;div class="box"&gt;Caixa 1&lt;/div&gt;
+                  &lt;div class="box red"&gt;Caixa 2&lt;/div&gt;
+                  &lt;div class="box blue"&gt;Caixa 3&lt;/div&gt;
+                &lt;/div&gt;
+                    </pre>
+                    <!-- Output -->
+                    <div class="output" style="height: 300px; align-items: center; flex-direction: column;">
+                        <div class="box">Caixa 1</div>
+                        <div class="box red">Caixa 2</div>
+                        <div class="box blue">Caixa 3</div>
+                    </div>
+                </article>
+                <article id="ex8" class="exercise">
+                    <h2 class="ex--title">Exercício 8: Caixa grande à esquerda e caixas empilhadas à direita</h2>
+                    <p><strong>Objetivo:</strong> Criar um layout com uma caixa grande à esquerda e 3 caixas empilhadas
+                        à
+                        direita, ambos centralizados horizontalmente no container.</p>
+                    <p><strong>Passos:</strong></p>
+                    <ol>
+                        <li>Crie um container chamado <code>container-8</code> com duas seções: uma à esquerda para a
+                            caixa
+                            grande e outra à direita para 3 caixas empilhadas. O container deve ter 300px de altura.
+                        </li>
+                        <li>Defina <code>display: flex</code> no container principal para alinhar os dois lados
+                            horizontalmente.</li>
+                        <li>No lado direito, defina <code>flex-direction: column</code> para empilhar as caixas menores.
+                        </li>
+                    </ol>
+                    <p><strong>Exemplo de código:</strong></p>
+                    <pre>
+                &lt;div class="container-8"&gt;
+                  &lt;div class="conteudo-esquerdo"&gt;
+                    &lt;div class="box big-orange"&gt;Grande&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class="conteudo-direito"&gt;
+                    &lt;div class="box "&gt;Caixa 1&lt;/div&gt;
+                    &lt;div class="box red"&gt;Caixa 2&lt;/div&gt;
+                    &lt;div class="box blue"&gt;Caixa 3&lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                    </pre>
+                    <!-- Output -->
+                    <div class="output container-8">
+                        <div class="conteudo-esquerdo">
+                            <div class="box big-orange">Grande</div>
+                        </div>
+                        <div class="conteudo-direito">
+                            <div class="box ">Caixa 1</div>
+                            <div class="box red">Caixa 2</div>
+                            <div class="box blue">Caixa 3</div>
+                        </div>
+                    </div>
+                </article>
+                <article id="ex8" class="exercise">
+                    <h2 class="ex--title">Exercício 9: Card com informações de produto</h2>
+                    <p><strong>Objetivo:</strong> Criar um cartão de informações de produto com imagem à esquerda e
+                        informações sobre o produto à direita.</p>
+                    <p><strong>Passos:</strong></p>
+                    <ol>
+                        <li>Crie um container chamado <code>product-card</code> que tenha duas seções: uma para a imagem
+                            do
+                            produto e outra para as informações do produto (título, descrição, preço, botão).</li>
+                        <li>Use <code>display: flex</code> no container principal para alinhar a imagem e as informações
+                            do
+                            produto lado a lado.</li>
+                        <li>Dentro das informações do produto, use <code>flex-direction: column</code> para empilhar os
+                            detalhes (título, descrição, preço, botão).</li>
+                    </ol>
+                    <p><strong>Exemplo de código:</strong></p>
+                    <pre>
+                &lt;div class="product-card"&gt;
+                  &lt;div class="product-image"&gt;
+                    &lt;img src="produto.jpg" alt="Produto"&gt;
+                  &lt;/div&gt;
+                  &lt;div class="product-info"&gt;
+                    &lt;h3&gt;Nome do Produto&lt;/h3&gt;
+                    &lt;p class="description"&gt;Descrição breve do produto.&lt;/p&gt;
+                    &lt;p class="price"&gt;R$ 99,99&lt;/p&gt;
+                    &lt;button&gt;Adicionar ao carrinho&lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                    </pre>
+                    <!-- Output -->
+                    <div class="output product-card">
+                        <div class="product-image">
+                            <img src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png"
+                                alt="Produto">
+                        </div>
+                        <div class="product-info">
+                            <h3>Nome do Produto</h3>
+                            <p class="description">Descrição breve do produto.</p>
+                            <p class="price">R$ 99,99</p>
+                            <button>Adicionar ao carrinho</button>
+                        </div>
+                    </div>
+                </article>
+                <button class="slider--button prev-button">
+                    <img src="Assets/SVG/arrow-left.svg" alt="Ir para esquerda">
+                </button>
+                <!-- Custom Next Button with SVG -->
+                <button class="slider--button next-button">
+                    <img src="Assets/SVG/arrow-right.svg" alt="Ir para direita">
+                </button>
+            </div>
         </section>
 
 

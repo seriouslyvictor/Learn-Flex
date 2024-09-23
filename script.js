@@ -29,22 +29,34 @@ const gerarNavBar = function (array) {
 }
 
 const iniciarSliders = function () {
-    const slider1 = document.querySelector(".slider");
+    const slider1 = document.querySelector("#slider1");
+    const slider2 = document.querySelector("#slider2")
     const params = {
         cellAlign: 'left',
         contain: true,
         prevNextButtons: false,
-        cellSelector: 'article'
+        cellSelector: 'article',
+        wrapAround: true,
     }
     const flicky1 = new Flickity(slider1, params)
-    const prevButton = document.querySelector('.prev-button');
-    const nextButton = document.querySelector('.next-button');
+    const carosel2 = new Flickity(slider2, params)
+    const prevButton = slider1.querySelector('.prev-button');
+    const nextButton = slider1.querySelector('.next-button');
+    const prevButton2 = slider2.querySelector('.prev-button');
+    const nextButton2 = slider2.querySelector('.next-button');
     prevButton.addEventListener('click', function () {
         flicky1.previous();  // Go to the previous slide
     });
     nextButton.addEventListener('click', function () {
         flicky1.next();  // Go to the next slide
     });
+    prevButton2.addEventListener('click', function () {
+        carosel2.previous();  // Go to the previous slide
+    });
+    nextButton2.addEventListener('click', function () {
+        carosel2.next();  // Go to the next slide
+    });
+
 
 }
 
