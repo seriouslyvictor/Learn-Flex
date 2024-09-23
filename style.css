@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&family=Hind:wght@300;400;500;600;700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
+/* General Styles */
 body {
     background-color: #020617;
     font-family: "Hind", Arial, sans-serif;
@@ -9,6 +10,25 @@ body {
     color: #efeeee;
 }
 
+h1,
+h2,
+h3 {
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #020617;
+    overflow-y: auto;
+}
+
+/* Sidebar Styles */
 .sidebar {
     height: 100vh;
     background-color: #333;
@@ -19,7 +39,6 @@ body {
     flex-direction: column;
     position: sticky;
     top: 0;
-    ;
 }
 
 .sidebar h2 {
@@ -38,30 +57,7 @@ body {
     text-decoration: underline;
 }
 
-.content {
-    flex-grow: 1;
-    padding: 40px;
-    background-color: #020617;
-    overflow-y: auto;
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Baloo Bhaina 2', cursive;
-}
-
-h1 {
-    font-size: 2.2rem;
-    margin-bottom: 20p
-}
-
-.content p {
-    font-size: 1em;
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
+/* Exercise Styles */
 .exercise {
     width: calc(100% - 42px);
     margin-top: 30px;
@@ -73,13 +69,33 @@ h1 {
     box-shadow: 1px 0px 9px 2px #ffffff1c;
 }
 
+.content p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Output Styles */
 .output {
     margin-top: 10px;
     padding: 20px;
     display: flex;
     gap: 10px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, #12FFF7, #B3FFAB);
+    border-image-slice: 1;
+    background-size: 200% 200%;
+    background-clip: border-box;
+    animation: borderAnimation 4s linear infinite;
 }
 
+.container-8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Box Styles */
 .box {
     width: 100px;
     height: 100px;
@@ -102,19 +118,12 @@ h1 {
     background-color: #fb923c;
 }
 
-
-hr {
-    width: 100%;
-    opacity: 0.2;
-    margin: 0;
+.big-orange {
+    background-color: #fb923c;
+    height: 300px;
 }
 
-article ol {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
+/* Code and Preformatted Text */
 code,
 pre {
     color: #5eead4;
@@ -127,61 +136,52 @@ pre {
     background-color: #030712;
 }
 
+/* Strong Text */
 strong {
-    background: #00F260;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0575E6, #00F260);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #0575E6, #00F260);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-clip: text;
-    -webkit-background-clip: text;
     color: transparent;
+}
 
+/* Miscellaneous Styles */
+hr {
+    width: 100%;
+    opacity: 0.2;
+    margin: 0;
+}
+
+article ol {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 section {
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.131);
 }
 
+/* Flexbox Layout Classes */
 .half--size {
     width: 50%;
 }
 
-
-/* Animaçao de borda */
-.output {
-    border: 2px solid transparent;
-    /* Border size and initial transparency */
-    border-image: linear-gradient(to right, #12FFF7, #B3FFAB);
-    border-image-slice: 1;
-    background-size: 200% 200%;
-    /* Ensures the gradient moves */
-    background-clip: border-box;
-    /* Ensures gradient stays within border */
-    animation: borderAnimation 4s linear infinite;
-}
-
-@keyframes borderAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
-/* FLickity Overwrites */
-
+/* Flickity Overwrites */
 .flickity-page-dots {
     top: 50px;
 }
 
 .flickity-page-dots .dot {
-    background-color: #0575E6;
+    background-color: none;
+    border: 1px solid #4ade80;
 }
 
+.dot.is-selected {
+    background-color: #4ade80;
+
+}
+
+/* Slider Button Styles */
 .slider--button {
     display: flex;
     align-items: center;
@@ -191,7 +191,6 @@ section {
     width: 3rem;
     height: 3rem;
     padding: 2px;
-    box-sizing: content-box;
     position: absolute;
     top: 50%;
     z-index: 10;
@@ -215,33 +214,7 @@ section {
     opacity: 1;
 }
 
-/* Output styles */
-
-.big-orange {
-    background-color: #fb923c;
-    flex: 1 0;
-    height: 100%;
-}
-
-.container-8 {
-    height: 18.75rem;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-}
-
-.conteudo-esquerdo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.conteudo-direito {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
+/* Card Layout Styles */
 .product-card {
     display: flex;
     align-items: center;
@@ -291,4 +264,15 @@ section {
 
 .product-card button:hover {
     background-color: hsl(210, 96%, 46%);
+}
+
+/* Animation for Border */
+@keyframes borderAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
